@@ -1,0 +1,122 @@
+\documentclass[preprint,12pt]{elsarticle}
+% \documentclass[draft,12pt]{elsarticle}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{relsize}
+\usepackage[utf8]{inputenc}
+\usepackage{cleveref}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[section]{placeins}
+\usepackage{booktabs}
+\usepackage{url}
+
+% For the TODOs
+\usepackage{xcolor}
+\usepackage{xargs}
+\usepackage[colorinlistoftodos,textsize=footnotesize]{todonotes}
+\newcommand{\todoin}{\todo[inline]}
+% from here: https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+
+%Boldtype for greek symbols
+\newcommand{\teng}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\ten}[1]{\ensuremath{\mathbf{#1}}}
+
+\usepackage{lineno}
+% \linenumbers
+\UseRawInputEncoding
+
+\journal{}
+
+\begin{document}
+
+\begin{frontmatter}
+
+  \title{DKT in non-Newtonian fluids with SPH}
+  \author[]{}
+  \ead{}
+  \author[]{}
+  \ead{}
+\address[UoS]{}
+
+\cortext[cor1]{Corresponding author}
+
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+{}, {}, {SPH}, {}
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+% \linenumbers
+
+\section{Introduction}
+\label{sec:intro}
+
+The following work in modeling of non-Newtonian fluid with in SPH is carried
+out by the following authors
+
+
+\begin{itemize}
+\item \citet{park_semi-implicit_2020} modeled Herschel Bulkley flows with SPH
+  using a semi-implicit operator technique.
+\item \citet{mao_gpu-accelerated_2022} modeled non-Newtonian flows in SPH for
+  GPUs, however it doesn't model the viscous terms with an implicit
+  operator technique.
+\item \citet{bellaard_simulation_2021} modeled viscosity in SPH using a
+  semi-implicit operator technique, however it is not sure if they modeled
+  non-Newtonian flows.
+\item \citet{han_improved_2013} modeled viscosity in SPH using a semi-implicit
+  operator technique.
+\item \citet{wu_modelling_2020} couples DEM with SPH and models the movement
+  of particles in non-Newtonian flows. This work doesn't have GPU formulation
+  and no implicit operator formulation is considered.
+\item \citet{hui_drafting_2022} models DKT in non-Newtonian fluids with IB-LBM
+  approach.
+\item \citep{shi_gpu-based_2022} models non-Newtonian multiphase flows with
+  delta-Plus-SPH Model on GPU. However, the viscosity term is not implicit.
+\item \citep{jiao_numerical_2022} models polygonal particles settling within
+  non-Newtonian fluids with IB-LBM-DEM.
+\item \citep{rossi_sph_2022} models flow past cylinder of thixo-viscoplastic
+  fluid flow.
+\item \citep{dietemann_smoothed_2020} Proposed implicit viscous coupled to
+  rigid solver algorithm to model rigid bodies in viscous flows.
+\end{itemize}
+
+
+
+
+\FloatBarrier%
+\section{Conclusions}
+\label{sec:conclusions}
+
+
+\section*{References}
+
+
+\bibliographystyle{model6-num-names}
+\bibliography{references}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "paper"
+%%% fill-column: 78
+%%% End:
